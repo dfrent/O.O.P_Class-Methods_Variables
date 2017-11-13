@@ -10,13 +10,13 @@ class Zombie
 
   def initialize(zombie_speed, zombie_strength)
     @strength = rand(10)
-      if @zombie_strength > @@max_strength
-         @zombie_strength = @@defualt_strength
+      if @strength > @@max_strength
+         @strength = @@defualt_strength
        end
 
      @speed = rand(7)
-      if @zombie_speed > @@max_speed
-         @zombie_speed = @defualt_speed
+      if @speed > @@max_speed
+         @speed = @defualt_speed
       end
   end
 
@@ -34,11 +34,11 @@ class Zombie
     @@plague_level
   end
 
-  def max_speed #mx zombie speed
+  def self.max_speed #mx zombie speed
     @@max_speed
   end
 
-  def max_strength #max zombie strength
+  def self.max_strength #max zombie strength
     @@max_strength
   end
 #----------------
@@ -106,6 +106,7 @@ class Zombie
 ##----INSTANCE----
 end
 
+ puts Zombie.feed.inspect
 
  puts Zombie.all.inspect
  Zombie.new_day
